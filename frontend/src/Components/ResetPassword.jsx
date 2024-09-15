@@ -13,7 +13,7 @@ const ResetPassword = () => {
     e.preventDefault();
     try {
       const response = await axios.patch(
-        `http://localhost:3001/api/auth/resetPassword/${token}`,
+        `${process.env.BASE_URL_BACKEND}/api/auth/resetPassword/${token}`,
         {
           password: password?.current.value,
           confirmPassword: confirmPassword?.current.value,

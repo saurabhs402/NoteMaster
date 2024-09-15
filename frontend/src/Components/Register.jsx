@@ -13,8 +13,17 @@ const Register = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const response=await axios.post("http://localhost:3001/api/auth/register", { name:name?.current.value,email: email?.current.value,password: password?.current.value,confirmPassword:confirmPassword?.current.value });
-      navigate("/login");
+      const response = await axios.post(
+        `${process.env.BASE_URL_BACKEND}/api/auth/register`,
+        {
+          name: name?.current.value,
+          email: email?.current.value,
+          password: password?.current.value,
+          confirmPassword: confirmPassword?.current.value,
+        }
+      );
+    toast.success("Registered Sucessfully!")
+    setTimeout(() => navigate("/login"), 1000);
     } catch (error) {
       console.error("Registration error", error);
        if (error.status === 400) {

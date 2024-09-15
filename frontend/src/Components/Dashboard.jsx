@@ -50,12 +50,15 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchNotes = async () => {
       try {
-        const response = await axios.get("http://localhost:3001/api/notes", {
-          headers: {
-            Authorization: `Bearer ${token}`,
-            "Content-Type": "application/json",
-          },
-        });
+        const response = await axios.get(
+          `${process.env.BASE_URL_BACKEND}/api/notes`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+              "Content-Type": "application/json",
+            },
+          }
+        );
         if (response.status === 200) {
           const getNotes = response.data.map((note) => ({
             id: note._id,
@@ -95,7 +98,7 @@ const Dashboard = () => {
     console.log("NewNote:", newNote);
     try {
       const response = await axios.post(
-        "http://localhost:3001/api/notes/",
+        `${process.env.BASE_URL_BACKEND}/api/notes/`,
         newNote,
         {
           headers: {
@@ -138,12 +141,15 @@ const Dashboard = () => {
 
   const handleDeleteNote = async (id) => {
     try{
-    const response=await axios.delete(`http://localhost:3001/api/notes/${id}`, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "application/json",
-      },
-    });
+    const response = await axios.delete(
+      `${process.env.BASE_URL_BACKEND}/api/notes/${id}`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+      }
+    );
     console.log("deleteResponse:",response)
     if(response.status===204)
     setNotes(notes.filter((note) => note.id !== id));
@@ -165,7 +171,7 @@ const Dashboard = () => {
   const handleUpdateNote = async (updatedNote) => {
     try {
       const response = await axios.put(
-        `http://localhost:3001/api/notes/${updatedNote.id}`,
+        `${process.env.BASE_URL_BACKEND}/api/notes/${updatedNote.id}`,
         {
           title: updatedNote.title,
           description: updatedNote.description,

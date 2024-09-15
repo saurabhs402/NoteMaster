@@ -18,7 +18,10 @@ const Login = () => {
       password.current.value
     );
     try {
-      const response = await axios.post("http://localhost:3001/api/auth/login", { email:email?.current.value, password:password?.current.value });
+      const response = await axios.post(
+        `${process.env.BASE_URL_BACKEND}/api/auth/login`,
+        { email: email?.current.value, password: password?.current.value }
+      );
       login(response.data.token);
       navigate("/dashboard");
     } catch (error) {

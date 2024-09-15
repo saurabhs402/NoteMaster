@@ -4,7 +4,7 @@ function Description() {
   return (
     <>
    
-      <h1 class="text-6xl font-bold py-8 font-mono ">Note Master</h1>
+      <h1 className="text-6xl font-bold py-8 font-mono ">Note Master</h1>
       <p className="text-lg text-gray-800 font-mono  dark:text-gray-300">
         A note-taking app is a tool designed to help users organize their
         thoughts, ideas, and tasks in one place. It allows you to quickly jot
