@@ -95,6 +95,7 @@ const forgotPassword = async function (req, res) {
 
   // 3. Send the Token back to the user email
 
+  req.protocol=process.env.BASE_URL_FRONTEND
   const resetUrl = `${req.protocol}://${req.get(
     "host"
   )}/resetPassword/${resetToken}`;
