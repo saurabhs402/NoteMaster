@@ -10,7 +10,7 @@ const ForgotPassword = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `${process.env.BASE_URL_BACKEND}/api/auth/forgotPassword`,
+        `${process.env.REACT_APP_BASE_URL_BACKEND}/api/auth/forgotPassword`,
         { email: email?.current.value }
       );
       toast.success(response.data.message||"Password reset link send to the user email.",{

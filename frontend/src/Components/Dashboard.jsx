@@ -51,7 +51,7 @@ const Dashboard = () => {
     const fetchNotes = async () => {
       try {
         const response = await axios.get(
-          `${process.env.BASE_URL_BACKEND}/api/notes`,
+          `${process.env.REACT_APP_BASE_URL_BACKEND}/api/notes`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -98,7 +98,7 @@ const Dashboard = () => {
     console.log("NewNote:", newNote);
     try {
       const response = await axios.post(
-        `${process.env.BASE_URL_BACKEND}/api/notes/`,
+        `${process.env.REACT_APP_BASE_URL_BACKEND}/api/notes/`,
         newNote,
         {
           headers: {
@@ -142,7 +142,7 @@ const Dashboard = () => {
   const handleDeleteNote = async (id) => {
     try{
     const response = await axios.delete(
-      `${process.env.BASE_URL_BACKEND}/api/notes/${id}`,
+      `${process.env.REACT_APP_BASE_URL_BACKEND}/api/notes/${id}`,
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -171,7 +171,7 @@ const Dashboard = () => {
   const handleUpdateNote = async (updatedNote) => {
     try {
       const response = await axios.put(
-        `${process.env.BASE_URL_BACKEND}/api/notes/${updatedNote.id}`,
+        `${process.env.REACT_APP_BASE_URL_BACKEND}/api/notes/${updatedNote.id}`,
         {
           title: updatedNote.title,
           description: updatedNote.description,
