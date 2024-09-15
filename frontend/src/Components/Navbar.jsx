@@ -1,5 +1,6 @@
 import React,{ useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link,Navigate } from "react-router-dom";
+import { FaHome } from "react-icons/fa";
 
 
 import { AuthContext } from "../Context/AuthContext";
@@ -9,12 +10,16 @@ function Navbar({ search, setSearch }) {
   const { token, logout } = useContext(AuthContext);
   // const token=null
   // const logout=()=>{}
+     const homeLink = !token ? "/dashboard" : "/";
   return (
     <>
-      <nav class="bg-sky-500 dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
-        <div class="max-w-screen-xl flex items-center justify-between mx-auto p-4 relative">
-          <div class="absolute left-1/2 transform -translate-x-1/2">
-            <h1 class="text-2xl font-bold font-mono text-white dark:text-white">
+      <nav className="bg-sky-500 dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+        <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4 relative">
+          <Link to={homeLink} className="flex items-center mr-4">
+            <FaHome className="text-white text-2xl cursor-pointer hover:text-gray-300 transition-colors" />
+          </Link>
+          <div className="absolute left-1/2 transform -translate-x-1/2">
+            <h1 className="text-2xl font-bold font-mono text-white dark:text-white">
               Note Master
             </h1>
           </div>

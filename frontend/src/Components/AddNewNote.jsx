@@ -6,8 +6,8 @@ function AddNewNote() {
   console.log("NoteText:",noteText)
   return (
     <div className="w-60  bg-sky-300  text-gray-600 flex flex-col justify-center p-4 gap-4 rounded-lg shadow-md">
-      <textarea
-        className=" text-lg font-extrabold px-4 font-mono capitalize rounded-md resize-none"
+      <input
+        className="text-lg font-extrabold px-4 font-mono capitalize rounded-md"
         placeholder="Add title"
       />
       <textarea

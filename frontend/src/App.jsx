@@ -4,7 +4,6 @@ import {
   Route,
   Routes,
   Navigate,
-  Link,
 } from "react-router-dom";
 import Login from "./Components/Login";
 import Register from "./Components/Register";
@@ -13,6 +12,7 @@ import { AuthContext } from "./Context/AuthContext";
 import Description from "./Components/Description";
 
 import Homepage from "./Components/Homepage";
+import NotFound from "./Components/NotFound";
 
 const App = () => {
   const { token, logout } = useContext(AuthContext);
@@ -50,6 +50,12 @@ const App = () => {
             path="/dashboard"
             element={!token ? <Dashboard /> : <Navigate to="/login" />}
           />
+
+           <Route
+            path="/notfound"
+            element={<NotFound/>}
+          /> 
+          <Route path="*" element={<Navigate to="/notfound" />} />
         </Routes>
       </div>
     </Router>
