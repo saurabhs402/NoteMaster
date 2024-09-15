@@ -4,14 +4,15 @@ function SearchBox({search,setSearch}) {
   return (
     <>
       <form className="form relative">
-     
         <input
           className="input rounded-full px-8 py-3 border-2 border-transparent focus:outline-none focus:border-blue-500 placeholder-gray-400 transition-all duration-300 shadow-md"
           placeholder="search title..."
           required=""
           type="text"
           value={search}
-          onChange={(e)=>{setSearch(e.target.value)}}
+          onChange={(e) => {
+            setSearch(e.target.value);
+          }}
         />
         <button
           type="reset"
@@ -25,8 +26,8 @@ function SearchBox({search,setSearch}) {
             stroke="currentColor"
           >
             <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               d="M6 18L18 6M6 6l12 12"
             ></path>
           </svg>

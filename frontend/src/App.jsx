@@ -13,6 +13,8 @@ import Description from "./Components/Description";
 
 import Homepage from "./Components/Homepage";
 import NotFound from "./Components/NotFound";
+import ForgotPassword from "./Components/ForgotPassword";
+import ResetPassword from "./Components/ResetPassword";
 
 const App = () => {
   const { token, logout } = useContext(AuthContext);
@@ -48,13 +50,26 @@ const App = () => {
           />
           <Route
             path="/dashboard"
-            element={!token ? <Dashboard /> : <Navigate to="/login" />}
+            element={token ? <Dashboard /> : <Navigate to="/login" />}
+          />
+          <Route
+            path="/forgotPassword"
+            element={
+              <Homepage>
+                <ForgotPassword />
+              </Homepage>
+            }
+          />
+          <Route
+            path="/resetPassword/:token"
+            element={
+              <Homepage>
+                <ResetPassword/>
+              </Homepage>
+            }
           />
 
-           <Route
-            path="/notfound"
-            element={<NotFound/>}
-          /> 
+          <Route path="/notfound" element={<NotFound />} />
           <Route path="*" element={<Navigate to="/notfound" />} />
         </Routes>
       </div>

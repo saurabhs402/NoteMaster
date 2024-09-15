@@ -1,5 +1,5 @@
 import React,{ useContext } from "react";
-import { Link,Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
 
 
@@ -8,9 +8,7 @@ import SearchBox from "./SearchBox";
 
 function Navbar({ search, setSearch }) {
   const { token, logout } = useContext(AuthContext);
-  // const token=null
-  // const logout=()=>{}
-     const homeLink = !token ? "/dashboard" : "/";
+  const homeLink = token ? "/dashboard" : "/";
   return (
     <>
       <nav className="bg-sky-500 dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
@@ -24,8 +22,8 @@ function Navbar({ search, setSearch }) {
             </h1>
           </div>
 
-          <div class="ml-auto flex space-x-2">
-            {token ? (
+          <div className="ml-auto flex space-x-2">
+            {!token ? (
               <>
                 <Link to="/login">
                   <button

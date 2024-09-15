@@ -16,7 +16,7 @@ function Homepage({children}) {
       <div className="min-h-screen bg-blue-50">
         <Navbar />
 
-        <div className="flex h-screen py-20">
+        <div className="flex min-h-screen py-20">
           <div className=" p-8 basis-1/2 flex-row items-start justify-center mx-2">
             {children}
           </div>

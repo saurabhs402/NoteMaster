@@ -11,7 +11,8 @@ function Note({
   currentNote,
   handleUpdateNote,
 }) {
-  console.log(currentNote)
+   const characterLimit=255;
+ 
    const [updatedTitle, setUpdatedTitle] = useState('');
    const [updatedDescription, setUpdatedDescription] = useState('');
 
@@ -46,19 +47,27 @@ function Note({
           <input
             className="text-lg font-extrabold px-4 font-mono capitalize rounded-md"
             value={updatedTitle}
-            onChange={(e) => setUpdatedTitle(e.target.value)}
+            onChange={(e) =>{ 
+                 if (characterLimit - e.target.value?.trim().length >= 0)
+                   setUpdatedTitle(e.target.value);
+            }}
           />
           <textarea
             className="px-4 h-32 rounded-md resize-none"
             value={updatedDescription}
             onChange={(e) => setUpdatedDescription(e.target.value)}
           />
-          <button
-            onClick={handleSaveUpdate}
-            className="bg-white text-sky-500 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center"
-          >
-            Save
-          </button>
+          <div className=" flex items-center justify-between">
+            <small>
+              {characterLimit - updatedDescription.trim().length} Remaining
+            </small>
+            <button
+              onClick={handleSaveUpdate}
+              className="bg-white text-sky-500 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center"
+            >
+              Save
+            </button>
+          </div>
         </>
       ) : (
         <>
