@@ -79,7 +79,7 @@ A note-taking app is a tool designed to help users organize their thoughts, idea
 - **/register:** Registration page for new users.
 - **/dashboard:** Dashboard for managing notes (protected route).
 - **/forgotPassword:** Page for resetting user password.
-- **/resetPassword/:token:** Page used to set new password.
+- **/resetPassword/:token:** Page is used to set new password.
 
 
 
@@ -327,7 +327,37 @@ npm start
      - **Headers**
       
          Authorization <token>
+
+ # Screenshots
+- **Homepage of application**
+
   
+  ![Example Screenshot](screenshots/s1.jpg)
+
+- **Registration page for new users**
+
+  
+  ![Example Screenshot](screenshots/s2.jpg)
+  
+- **Login page for users**
+
+  
+  ![Example Screenshot](screenshots/s3.jpg)
+  
+- **Dashboard for managing notes (protected route)**
+
+  
+  ![Example Screenshot](screenshots/s4.jpg)
+
+- **Page for resetting user password**
+
+  
+   ![Example Screenshot](screenshots/s5.jpg)
+
+- **Page is used to set new password**
+
+  
+   ![Example Screenshot](screenshots/s6.jpg)
 
 
 
