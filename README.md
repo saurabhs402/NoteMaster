@@ -60,9 +60,9 @@ A note-taking app is a tool designed to help users organize their thoughts, idea
      Create a .env file in the root directory and add the following:
 
      ```
-     REACT_APP_BASE_URL_BACKEND=http://localhost:3001.
+     REACT_APP_BASE_URL_BACKEND=http://localhost:3001
      ```
-     ```
+   
 4. **Start the Server:**
      ```
      npm start
