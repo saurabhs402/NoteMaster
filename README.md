@@ -238,7 +238,7 @@ npm start
 
     - **Headers**
       
-      Authorization <token>
+      Authorization : Bearer Token
     
    **Example Response:**
       ```
@@ -271,7 +271,7 @@ npm start
 
     - **Headers**
 
-      Authorization <token>
+      Authorization : Bearer Token
     - **Body(raw)**
      ```
      {
@@ -298,7 +298,7 @@ npm start
 
     - **Headers**
       
-      Authorization <token>
+      Authorization : Bearer Token
 
      **Body(raw)**
      ```
@@ -326,7 +326,7 @@ npm start
 
      - **Headers**
       
-         Authorization <token>
+         Authorization : Bearer Token
 
  # Screenshots
 - **Homepage of application**
